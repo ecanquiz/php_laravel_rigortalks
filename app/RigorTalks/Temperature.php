@@ -30,6 +30,11 @@ class Temperature
         }  
     }
     
+    public static function take($measure): Temperature
+    {
+        return new Temperature($measure);
+    }
+    
     public function measure(): int
     {
         return $this->measure;
