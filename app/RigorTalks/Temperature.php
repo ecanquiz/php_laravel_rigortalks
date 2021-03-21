@@ -30,4 +30,5 @@ class Temperature
             throw new TemperatureNegativeException("Measure should be positive");
         }  
     }
+
 }
