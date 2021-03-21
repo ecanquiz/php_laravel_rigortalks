@@ -2,6 +2,3 @@ Introduction
 https://www.youtube.com/watch?v=Ttk9fDGwjrY&list=PLfgj7DYkKH3Cd8bdu5SIHGYXh_bPV2idP&index=1
 Guard Clauses
 https://www.youtube.com/watch?v=Ttk9fDGwjrY&list=PLfgj7DYkKH3Cd8bdu5SIHGYXh_bPV2idP&index=2
-
-
-https://phpunit.de/manual/3.7/en/writing-tests-for-phpunit.html#writing-tests-for-phpunit.exceptions
