@@ -8,6 +8,19 @@ use App\RigorTalks\Temperature;
 
 class TemperatureTest extends TestCase
 {
+
+    /**
+    * @test
+    */
+    public function tryToCreateAValidTemperatureWithNamedConstructor()
+    {
+        $measure = 18;        
+        $this->assertSame(
+            $measure,
+            (Temperature::take($measure))->measure()
+        );
+    }
+    
     /**
      * @test
      * @expectedException \App\Exceptions\TemperatureNegativeException     
@@ -15,7 +28,7 @@ class TemperatureTest extends TestCase
     public function tryToCreateANonValidTemperature()
     {   
         $this->expectException(\App\Exceptions\TemperatureNegativeException::class);  
-        new Temperature(-1);     
+	Temperature::take(-1);     
     }
   
     /**
@@ -26,7 +39,7 @@ class TemperatureTest extends TestCase
         $measure = 18;        
         $this->assertSame(
             $measure,
-            (new Temperature($measure))->measure()
+            (Temperature::take($measure))->measure()
         );
     }
 }
