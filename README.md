@@ -19,5 +19,7 @@ https://www.youtube.com/watch?v=RE3cAEFSsDc&list=PLfgj7DYkKH3Cd8bdu5SIHGYXh_bPV2
 Rigor Talks - PHP - #5 - Named Constructors III (Spanish)
 https://www.youtube.com/watch?v=w2CfVDtQGc0&list=PLfgj7DYkKH3Cd8bdu5SIHGYXh_bPV2idP&index=6
 
+Rigor Talks - PHP - #6 - Named Constructors IV (Spanish)
+https://www.youtube.com/watch?v=210Ed5PeK4g&list=PLfgj7DYkKH3Cd8bdu5SIHGYXh_bPV2idP&index=7
 
 
