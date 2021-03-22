@@ -30,9 +30,9 @@ class Temperature
         }  
     }
     
-    public static function take($measure): Temperature
+    public static function take($measure): self
     {
-        return new Temperature($measure);
+        return new static($measure);
     }
     
     public function measure(): int
