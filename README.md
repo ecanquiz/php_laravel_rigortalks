@@ -22,4 +22,8 @@ https://www.youtube.com/watch?v=w2CfVDtQGc0&list=PLfgj7DYkKH3Cd8bdu5SIHGYXh_bPV2
 Rigor Talks - PHP - #6 - Named Constructors IV (Spanish)
 https://www.youtube.com/watch?v=210Ed5PeK4g&list=PLfgj7DYkKH3Cd8bdu5SIHGYXh_bPV2idP&index=7
 
+Rigor Talks - PHP - #7 - Test Class (Spanish)
+https://www.youtube.com/watch?v=8UFAyC173JU&list=PLfgj7DYkKH3Cd8bdu5SIHGYXh_bPV2idP&index=8
+
+
 

@@ -4,7 +4,7 @@ namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 
-use App\RigorTalks\Temperature;
+use App\RigorTalks\{Temperature, TemperatureTestClass};
 
 class TemperatureTest extends TestCase
 {
@@ -42,4 +42,27 @@ class TemperatureTest extends TestCase
             (Temperature::take($measure))->measure()
         );
     }
+
+    /**
+     * @test
+     */ 
+    public function tryToCheckIfAColdTemperatureIsSuperHot()
+    {
+        //$this->markTestSkipped();
+        $this->assertFalse(
+	        TemperatureTestClass::take(10)->isSuperHot()
+	    );
+    }
+
+    /**
+     * @test
+     */ 
+    public function tryToCheckIfASuperHotTemperatureIsSuperHot()
+    {
+        //$this->markTestSkipped();
+        $this->assertTrue(
+	        TemperatureTestClass::take(100)->isSuperHot()
+	    );
+    }
+
 }

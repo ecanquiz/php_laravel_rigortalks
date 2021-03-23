@@ -40,6 +40,27 @@ class Temperature
         return $this->measure;
     }  
    
+    public function isSuperHot(): bool
+    {
+        $threshold = $this->getThreshold();
+
+	return $this->measure() > $threshold;
+    }
+
+    protected function getThreshold()
+    {
+        // It could also be
+	    // global $conn	    
+        $conn = \Doctrine\DBAL\DriverManager::getConnection(array(
+           'dbname' => 'mydb',
+	   'user' => 'user',
+	   'password' => 'secret',
+	   'host' => 'localhost',
+	   'driver' => 'pdo_mysql',
+        ), new \Doctrine\DBAL\Configuration());
+	
+	   return $conn->fetchColumn('SELECT hot_threshold FROM configuration');
+    }
 
 
 }
