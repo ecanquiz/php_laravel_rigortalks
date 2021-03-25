@@ -75,15 +75,34 @@ class TemperatureTest extends TestCase implements ColdThresholdSource
     {
         //$this->markTestSkipped();
         $this->assertTrue(
-	    Temperature::take(10)->isSuperCold(
-	        $this 
-	   )
-	);
+	        Temperature::take(10)->isSuperCold(
+	            $this 
+	        )
+	    );
     }
 
     public function getThreshold(): int
     {
         return 50;
+    }
+    
+    
+    /**
+     * @test
+     */ 
+    public function tryToCheckIfASuperColdTemperatureIsSuperiColdWithAnomClass()
+    {
+        //$this->markTestSkipped();
+        $this->assertTrue(
+	        Temperature::take(10)->isSuperCold(
+	            new class implements ColdThresholdSource {	            
+	                public function getThreshold(): int
+                    {
+                        return 50;
+                    }
+	            }
+	        )
+	    );
     }
     
 }
