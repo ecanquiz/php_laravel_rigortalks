@@ -3,10 +3,13 @@
 namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
+use App\RigorTalks\{
+  ColdThresholdSource,
+  Temperature,
+  TemperatureTestClass
+};
 
-use App\RigorTalks\{Temperature, TemperatureTestClass};
-
-class TemperatureTest extends TestCase
+class TemperatureTest extends TestCase implements ColdThresholdSource
 {
 
     /**
@@ -65,4 +68,22 @@ class TemperatureTest extends TestCase
 	    );
     }
 
+    /**
+     * @test
+     */ 
+    public function tryToCheckIfASuperColdTemperatureIsSuperiCold()
+    {
+        //$this->markTestSkipped();
+        $this->assertTrue(
+	    Temperature::take(10)->isSuperCold(
+	        $this 
+	   )
+	);
+    }
+
+    public function getThreshold(): int
+    {
+        return 50;
+    }
+    
 }

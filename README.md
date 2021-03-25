@@ -25,5 +25,8 @@ https://www.youtube.com/watch?v=210Ed5PeK4g&list=PLfgj7DYkKH3Cd8bdu5SIHGYXh_bPV2
 Rigor Talks - PHP - #7 - Test Class (Spanish)
 https://www.youtube.com/watch?v=8UFAyC173JU&list=PLfgj7DYkKH3Cd8bdu5SIHGYXh_bPV2idP&index=8
 
+Rigor Talks - PHP - #8 - Self-Shunt (Spanish)
+https://www.youtube.com/watch?v=Ds-Iop1zB24&list=PLfgj7DYkKH3Cd8bdu5SIHGYXh_bPV2idP&index=10
+
 
 

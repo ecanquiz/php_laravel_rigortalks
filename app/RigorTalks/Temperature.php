@@ -3,6 +3,7 @@
 namespace App\RigorTalks;
 
 use App\Exceptions\TemperatureNegativeException;
+use App\RigorTalks\ColdThresholdSource;
 
 class Temperature
 {
@@ -44,13 +45,13 @@ class Temperature
     {
         $threshold = $this->getThreshold();
 
-	return $this->measure() > $threshold;
+	    return $this->measure() > $threshold;
     }
 
     protected function getThreshold()
     {
         // It could also be
-	    // global $conn	    
+	// global $conn	    
         $conn = \Doctrine\DBAL\DriverManager::getConnection(array(
            'dbname' => 'mydb',
 	   'user' => 'user',
@@ -59,8 +60,14 @@ class Temperature
 	   'driver' => 'pdo_mysql',
         ), new \Doctrine\DBAL\Configuration());
 	
-	   return $conn->fetchColumn('SELECT hot_threshold FROM configuration');
+	return $conn->fetchColumn('SELECT hot_threshold FROM configuration');
     }
 
+    public function isSuperCold(ColdThresholdSource $coldThresholdSource)    
+    {
+      $threshold = $coldThresholdSource->getThreshold();
+
+      return $this->measure() < $threshold;
+    }
 
 }
