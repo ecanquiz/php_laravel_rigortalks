@@ -11,6 +11,7 @@ use App\RigorTalks\{
 
 class TemperatureTest extends TestCase implements ColdThresholdSource
 {
+    use TemperatureTestable;
 
     /**
     * @test
@@ -31,7 +32,7 @@ class TemperatureTest extends TestCase implements ColdThresholdSource
     public function tryToCreateANonValidTemperature()
     {   
         $this->expectException(\App\Exceptions\TemperatureNegativeException::class);  
-	Temperature::take(-1);     
+	    Temperature::take(-1);     
     }
   
     /**
@@ -51,7 +52,6 @@ class TemperatureTest extends TestCase implements ColdThresholdSource
      */ 
     public function tryToCheckIfAColdTemperatureIsSuperHot()
     {
-        //$this->markTestSkipped();
         $this->assertFalse(
 	        TemperatureTestClass::take(10)->isSuperHot()
 	    );
@@ -62,7 +62,6 @@ class TemperatureTest extends TestCase implements ColdThresholdSource
      */ 
     public function tryToCheckIfASuperHotTemperatureIsSuperHot()
     {
-        //$this->markTestSkipped();
         $this->assertTrue(
 	        TemperatureTestClass::take(100)->isSuperHot()
 	    );
@@ -73,36 +72,41 @@ class TemperatureTest extends TestCase implements ColdThresholdSource
      */ 
     public function tryToCheckIfASuperColdTemperatureIsSuperiCold()
     {
-        //$this->markTestSkipped();
         $this->assertTrue(
 	        Temperature::take(10)->isSuperCold(
 	            $this 
 	        )
 	    );
-    }
-
-    public function getThreshold(): int
-    {
-        return 50;
-    }
-    
+    }    
     
     /**
      * @test
      */ 
     public function tryToCheckIfASuperColdTemperatureIsSuperiColdWithAnomClass()
     {
-        //$this->markTestSkipped();
         $this->assertTrue(
 	        Temperature::take(10)->isSuperCold(
 	            new class implements ColdThresholdSource {	            
-	                public function getThreshold(): int
+	                public function getThreshold(): int // this method is in the trait 
                     {
                         return 50;
                     }
 	            }
 	        )
 	    );
+    }
+    
+    /**
+     * @test
+     */ 
+    public function tryToCreateATemperatureFromStation()
+    {        
+        $this->assertSame(
+            50,
+            Temperature::fromStation(
+                $this // these method is in the trait
+            )->measure()
+        );     
     }
     
 }

@@ -31,3 +31,6 @@ https://www.youtube.com/watch?v=Ds-Iop1zB24&list=PLfgj7DYkKH3Cd8bdu5SIHGYXh_bPV2
 Rigor Talks - PHP - #9 - Self-Shunt II (PHP7) (Spanish)
 https://www.youtube.com/watch?v=gpUDgEVw9tM&list=PLfgj7DYkKH3Cd8bdu5SIHGYXh_bPV2idP&index=10
 
+Rigor Talks - PHP - #10 - Self-Shunt III (Spanish)
+https://www.youtube.com/watch?v=e35igS90MkI&list=PLfgj7DYkKH3Cd8bdu5SIHGYXh_bPV2idP&index=11
+

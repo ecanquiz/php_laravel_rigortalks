@@ -60,14 +60,21 @@ class Temperature
 	   'driver' => 'pdo_mysql',
         ), new \Doctrine\DBAL\Configuration());
 	
-	return $conn->fetchColumn('SELECT hot_threshold FROM configuration');
+	    return $conn->fetchColumn('SELECT hot_threshold FROM configuration');
     }
 
-    public function isSuperCold(ColdThresholdSource $coldThresholdSource)    
+    public function isSuperCold(ColdThresholdSource $coldThresholdSource): bool
     {
       $threshold = $coldThresholdSource->getThreshold();
 
       return $this->measure() < $threshold;
+    }
+    
+    public static function fromStation($station): self
+    {
+        return new static(
+            $station->sensor()->temperature()->measure()
+        );
     }
 
 }
